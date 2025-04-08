@@ -1,0 +1,78 @@
+body {
+    background: #eef0ff
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* Login ------ styel */
+.box-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70vh;
+}
+
+.box-login .left > h1 {
+    font-size: 50px;
+}
+
+.box-signup .left > p {
+    width: 400px;
+}
+
+.login {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+}
+
+.login form input {
+    width: 250px;
+}
+/* Login ------ styel */
+
+/* SignUp ------ styel */
+.box-signup {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80vh;
+}
+
+.box-signup .left > p {
+    width: 400px;
+}
+
+.box-signup .left > h1 {
+    font-size: 50px;
+}
+
+.signup {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+}
+
+.signup form input {
+    width: 250px;
+}
+/* SignUp ------ styel */
