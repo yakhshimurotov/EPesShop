@@ -1,9 +1,9 @@
 body {
-    background: #eef0ff
+    background: #eeeeee;
 }
 
 .container {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -13,14 +13,6 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 70vh;
-}
-
-.box-login .left > h1 {
-    font-size: 50px;
-}
-
-.box-signup .left > p {
-    width: 400px;
 }
 
 .login {
@@ -37,10 +29,30 @@ body {
     padding: 3em;
 }
 
+.login form input::placeholder {
+    font-size: 14px;
+}
+
+.login form h1 {
+    font-size: 30px;
+}
+
 .login form input {
     width: 250px;
 }
+
 /* Login ------ styel */
+
+
+.login .signup, form .error {
+    font-size: 13px;
+    padding: 10px;
+    background-color: #ebebeb;
+    position: relative;
+    top: 2em;
+    color: #0a58ca;
+    border-radius: 7px;
+}
 
 /* SignUp ------ styel */
 .box-signup {
@@ -48,14 +60,6 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 80vh;
-}
-
-.box-signup .left > p {
-    width: 400px;
-}
-
-.box-signup .left > h1 {
-    font-size: 50px;
 }
 
 .signup {
@@ -72,7 +76,22 @@ body {
     padding: 3em;
 }
 
+.signup form input::placeholder {
+    font-size: 14px;
+}
+
 .signup form input {
     width: 250px;
 }
+
+.signup form h1 {
+    font-size: 30px;
+}
+
 /* SignUp ------ styel */
+
+header a > img {
+    background-color: #222;
+    width: 40px;
+    border-radius: 100%;
+}

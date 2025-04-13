@@ -3,16 +3,21 @@
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+           <img src="images/Logo-pes.png" alt="" class="animation">
         </a>
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2">Features</a></li>
-        <li><a href="#" class="nav-link px-2">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li>
+        {{#if isProduct}}
+         <li><a href="/product" class="nav-link px-2 text-decoration-underline">Products</a></li>
+        {{else}}
+         <li><a href="/product" class="nav-link px-2">Products</a></li>
+        {{/if}}
+        {{#if isAdd}}
+         <li><a href="/add" class="nav-link px-2 text-decoration-underline">Add</a></li>
+        {{else}}
+         <li><a href="/add" class="nav-link px-2">Add</a></li>
+        {{/if}}
       </ul>
 
       <div class="col-md-3 text-end">
@@ -22,9 +27,9 @@
            <a href="/login"><button type="button" class="btn btn-dark me-2">Login</button></a>
         {{/if}}
         {{#if isSignup}}
-           <a href="/signup"><button type="button" class="btn btn-warning active">Sign-up</button></a>
+           <a href="/signup"><button type="button" class="btn btn-primary active">Sign-up</button></a>
         {{else}}
-           <a href="/signup"><button type="button" class="btn btn-warning">Sign-up</button></a>
+           <a href="/signup"><button type="button" class="btn btn-primary">Sign-up</button></a>
         {{/if}}
       </div>
     </header>

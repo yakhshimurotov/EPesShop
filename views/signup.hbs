@@ -1,52 +1,52 @@
 <div class="container">
   <div class="box-signup">
     <div class="left">
-      <h1 class="mb-4">Sign-up</h1>
-      <p>
-        Yangi dan ro'yhattan o'ting "Form" ni
-        to'ldiring ⚡
-      </p>
+      <img src="images/messi.png" alt="" width="430px">
     </div>
     <div class="signup">
       <form action="/signup" method="post">
+        <h1 class="mb-4">Sign-up</h1>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">First Name</label>
           <input
             name="firstName"
             type="text"
             class="form-control"
             id="exampleInputEmail1"
+            placeholder="First Name"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Last Name</label>
           <input
             name="lastName"
             type="text"
             class="form-control"
             id="exampleInputEmail1"
+            placeholder="Last Name"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input
             name="email"
             type="email"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            placeholder="Email address"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
           <input
             name="password"
             type="password"
             class="form-control"
             id="exampleInputPassword1"
+            placeholder="Password"
           />
         </div>
         <button type="submit" class="btn btn-dark">Submit</button>
+          {{#if isSignupError}}
+          <p class="error">{{isSignupError}}</p>
+          {{/if}} 
       </form>
     </div>
   </div>
