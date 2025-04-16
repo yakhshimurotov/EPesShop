@@ -1,0 +1,51 @@
+/* Add products info */
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+    margin: 0 auto;
+    width: 50%;
+    height: 70vh;
+}
+
+form .info-error > .error {
+    background-color: #ffd5d5;
+    text-align: center;
+}
+
+.info-box .form-floating textarea {
+    resize: none;
+    height: 100px;
+    transition: all .3s;
+}
+
+.info-box .input-sum {
+    width: 50%;
+}
+
+.info-box .form-floating textarea:active {
+    border: 1px solid #6FFF21;
+    box-shadow: 0px 0px 0px 5px #d5ffbe;
+}  
+
+.info-box .form-floating textarea:focus {
+    border: 1px solid #6FFF21;
+    box-shadow: 0px 0px 0px 5px #d5ffbe;
+}
+
+.input-group input {
+    transition: all .3s;
+}
+
+.input-group input:active {
+    border: 1px solid #6FFF21;
+    box-shadow: 0px 0px 0px 5px #d5ffbe;
+}
+
+.input-group input:focus {
+    border: 1px solid #6FFF21;
+    box-shadow: 0px 0px 0px 5px #d5ffbe;
+}
+

@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import flash from "connect-flash";
 import session from "express-session";
+import varMiddleware from "./middleware/var.js";
+import cookieParser from "cookie-parser";
 // Routers
 import mainRoutes from "./routes/main.js";
 import registerRoutes from "./routes/register.js";
@@ -24,6 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session({secret: "Jokhn", resave: false, saveUninitialized: false}));
 app.use(flash());
+app.use(cookieParser());
+app.use(varMiddleware);
 
 app.use(mainRoutes);
 app.use(registerRoutes);

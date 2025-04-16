@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Account's</h1>
+
+  {{#if product.length}}
+        {{#each product}}
+            <div>
+                <a href="{{url}}">telegram</a>
+            </div>
+            <div>
+                <p>{{uzs}}- so'm</p>
+            </div>
+            <div>
+                <img src="{{image}}" alt="img">
+            </div>
+        {{/each}}
+  {{else}}
+    <p>No Product</p>
+  {{/if}}
+</div>
