@@ -1,7 +1,7 @@
 <div class="container">
   <div class="box-signup">
     <div class="left">
-      <img src="images/messi.png" alt="" width="430px">
+      <img src="images/messi.png" alt="" width="400px">
     </div>
     <div class="signup">
       <form action="/signup" method="post">
@@ -42,10 +42,11 @@
             id="exampleInputPassword1"
             placeholder="Password"
           />
+        <button type="submit" class="btn btn-dark mt-3">Submit</button>
+        <button type="reset" class="btn btn-dark mt-3">Reset</button>
         </div>
-        <button type="submit" class="btn btn-dark">Submit</button>
           {{#if isSignupError}}
-          <p class="error">{{isSignupError}}</p>
+          <p class="error">{{isSignupError}} ⚠️</p>
           {{/if}} 
       </form>
     </div>

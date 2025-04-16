@@ -1,12 +1,17 @@
 import { Router } from "express";
-import User from "../models/user.js";
+import User from "../models/User.js";
 import bcrypt from "bcrypt";
+import { generateJwtToken } from "../servies/servies.js";
 const router = Router();
 
 
 // Login --------------
 
 router.get("/login", (req, res) => {
+    if(req.cookies.token) {
+        res.redirect("/")
+        return
+    }
     res.render("login", {
         title: "Login",
         isLogin: true,
@@ -37,7 +42,13 @@ router.post("/login", async (req, res) => {
         return
     };
 
-    console.log(existUser);
+    const token = generateJwtToken(existUser._id);
+    res.cookie("token", token, {httpOnly: true, secure: true});
+    res.redirect("/accounts");
+});
+
+router.get("/logout", (req, res) => {
+    res.clearCookie("token");
     res.redirect("/");
 });
 
@@ -46,6 +57,10 @@ router.post("/login", async (req, res) => {
 // SignUp --------------
 
 router.get("/signup", (req, res) => {
+    if(req.cookies.token) {
+        res.redirect("/")
+        return
+    }
     res.render("signup", {
         title: "Sign-up",
         isSignup: true,
@@ -73,6 +88,7 @@ router.post("/signup", async (req, res) => {
     if(userName){
         req.flash("isSignupError", "First Name is already use");
         res.redirect("/signup");
+        return
     };
 
     const hashPassword = await bcrypt.hash(password, 10);
@@ -83,8 +99,10 @@ router.post("/signup", async (req, res) => {
         password: hashPassword,
     };
     const user = await User.create(userData);
-    console.log(user);
-    res.redirect("/");
+    const token = generateJwtToken(user._id);
+    res.cookie("token", token, {httpOnly: true, secure: true});
+    res.redirect("/accounts");
+    return
 });
 
 // SignUp --------------

@@ -1,3 +1,50 @@
 <div class="container">
-    <h1>Add</h1>
+  <h1>Add Product</h1>
+  <div class="info-box">
+    <form action="/add-product" method="post">
+      <div class="form-floating mb-3">
+        <textarea
+          name="description"
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea2">Description 📄</label>
+      </div>
+
+      <div class="input-group mb-3">
+        <input class="form-control" name="image" type="file" id="fileInput" accept="image/*" />
+        <br />
+      </div>
+
+      <div class="mb-3 info-error">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon3">Your//t.me URL 🔗</span>
+          <input
+            name="url"
+            type="text"
+            class="form-control"
+            id="basic-url"
+            aria-describedby="basic-addon3 basic-addon4"
+          />
+        </div>
+        <div class="input-group mt-3 input-sum">
+          <span class="input-group-text">UZS 💵</span>
+          <input
+            name="uzs"
+            type="number"
+            class="form-control"
+            aria-label="Amount (to the nearest dollar)"
+          />
+          <span class="input-group-text">So'm</span>
+        </div>
+        <button type="submit" class="btn btn-dark mt-3">Add product</button>
+        <button type="reset" class="btn btn-dark mt-3">Reset</button>
+        {{#if isAddProduct}}
+          <p class="error">{{isAddProduct}} ⚠️</p>
+        {{/if}}
+      </div>
+    </form>
+  </div>
 </div>

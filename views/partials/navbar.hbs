@@ -1,5 +1,4 @@
-
-<div class="container">
+  <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -8,29 +7,41 @@
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        {{#if isProduct}}
-         <li><a href="/product" class="nav-link px-2 text-decoration-underline">Products</a></li>
+        {{#if isAcounts}}
+         <li><a href="/accounts" class="nav-link px-2 text-decoration-underline a-color">All account's 🔎</a></li>
         {{else}}
-         <li><a href="/product" class="nav-link px-2">Products</a></li>
+         <li><a href="/accounts" class="nav-link px-2 a-color">All account's 🔎</a></li>
+        {{/if}}
+
+        {{#if isProduct}}
+         <li><a href="/product" class="nav-link px-2 text-decoration-underline a-color">My products 🛍️</a></li>
+        {{else}}
+         <li><a href="/product" class="nav-link px-2 a-color">My products 🛍️</a></li>
         {{/if}}
         {{#if isAdd}}
-         <li><a href="/add" class="nav-link px-2 text-decoration-underline">Add</a></li>
+         <li><a href="/add" class="nav-link px-2 text-decoration-underline a-color">Add 🛒</a></li>
         {{else}}
-         <li><a href="/add" class="nav-link px-2">Add</a></li>
+         <li><a href="/add" class="nav-link px-2 a-color">Add 🛒</a></li>
         {{/if}}
       </ul>
 
-      <div class="col-md-3 text-end">
-        {{#if isLogin}}
-           <a href="/login"><button type="button" class="btn btn-dark me-2 active">Login</button></a>
-        {{else}}
-           <a href="/login"><button type="button" class="btn btn-dark me-2">Login</button></a>
-        {{/if}}
-        {{#if isSignup}}
-           <a href="/signup"><button type="button" class="btn btn-primary active">Sign-up</button></a>
-        {{else}}
-           <a href="/signup"><button type="button" class="btn btn-primary">Sign-up</button></a>
-        {{/if}}
-      </div>
+         {{#if token}}
+         <div class="col-md-3 text-end btn-box">
+              <a href="/logout"><button type="button" class="btn btn-anim btn-success me-2">Logout</button></a>
+         </div>
+         {{else}}
+           <div class="col-md-3 text-end btn-box">
+            {{#if isLogin}}
+               <a href="/login"><button type="button" class="btn btn-dark me-2 active">Login</button></a>
+            {{else}}
+               <a href="/login"><button type="button" class="btn btn-dark me-2">Login</button></a>
+            {{/if}}
+            {{#if isSignup}}
+               <a href="/signup"><button type="button" class=" btn btn-success active">Sign-up</button></a>
+            {{else}}
+               <a href="/signup"><button type="button" class=" btn btn-success">Sign-up</button></a>
+            {{/if}}
+          </div>
+         {{/if}}
     </header>
-  </div>
+</div>
