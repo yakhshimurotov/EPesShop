@@ -1,5 +1,6 @@
 import { Router } from "express";
-import Product from "../models/product.js";
+import Product from "../models/Product.js";
+import upload  from "../middleware/multer.js";
 import userMiddleware from "../middleware/user.js";
 const router = Router();
 
@@ -33,21 +34,32 @@ router.get("/add", (req, res) => {
     });
 });
 
-router.post("/add-product", userMiddleware, async (req, res) => {
-    const {description, image, url, uzs} = req.body;
-
-    if(!description || !image || !url || !uzs) {
-        req.flash("isAddProduct", "All fields is required");
-        res.redirect("/add");
-        return
+router.post("/add-product", userMiddleware, upload.single("image"), async (req, res) => {
+    if(req.file) {
+        console.log("Fayllar yuklandi", req.file.filename);
+    }else {
+        console.log("Fayllar yuklanmadi chunki form ga hecnima kiritilmagan");
+    }; // 👉 bunda fayl haqida ma’lumot chiqishi kerak
+    const { description, url, uzs } = req.body;
+  
+    // ❗️ Ayni xatolik shu yerda bo'lishi mumkin
+    const image = req.file?.filename;
+  
+    if (!description || !url || !uzs || !image) {
+      req.flash("isAddProduct", "All fields are required");
+      return res.redirect("/add");
     }
-
-    console.log(req.userId);
-
-    await Product.create({...req.body, user: req.userId});
+  
+    await Product.create({
+      description,
+      url,
+      uzs,
+      image,
+      user: req.userId,
+    });
+  
     res.redirect("/accounts");
-    return
-});
+  });
 
 router.get("/accounts", async (req, res) => {
     const product = await Product.find().lean();
