@@ -5,7 +5,19 @@ body {
 .container {
     max-width: 1000px;
     margin: 0 auto;
+    cursor: default;
 }
+
+/* Loading ------ styel */
+.loader {
+    background-color: #00000066;
+    backdrop-filter: blur(15px);
+}
+
+.loader .loader-obj {
+    color: #6FFF21;
+}
+/* Loading ------ styel */
 
 /* Login ------ styel */
 .box-login {

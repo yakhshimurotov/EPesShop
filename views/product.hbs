@@ -1,3 +1,53 @@
 <div class="container">
-    <h1>Product</h1>
+  <h1 class="mb-5">My Products</h1>
+  {{#if myProduct.length}}
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 p-3 card-box">
+      {{#each myProduct}}
+        <div class="col">
+          <div class="card card-in">
+            <img
+              src="/uploads/{{this.image}}"
+              alt="product image"
+              width="100%"
+              class="img-thumbnail"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal{{@index}}"
+            />
+
+            <div class="card-body">
+              <h5 class="text-bold fw-bold">{{this.title}}</h5>
+              <p class="card-text">{{this.description}}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, voluptatibus.</p>
+              <p>{{this.uzs}} so'm 💵</p>
+              <p>{{userId}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="imageModal{{@index}}"
+          tabindex="-1"
+          aria-labelledby="imageModalLabel{{@index}}"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body text-center">
+                <img
+                  src="/uploads/{{this.image}}"
+                  class="img-fluid"
+                  alt="Full image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Product 👀</p>
+  {{/if}}
 </div>

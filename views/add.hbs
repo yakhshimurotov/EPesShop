@@ -1,7 +1,15 @@
 <div class="container">
-  <h1>Add Product</h1>
+  <h1 class="salom">Add Product</h1>
   <div class="info-box">
-    <form action="/add-product" method="POST" enctype="multipart/form-data">
+    <form id="myForm" action="/add-product" method="POST" enctype="multipart/form-data">
+     <div class="input-group mb-3">
+          <input
+            class="form-control"
+            name="title"
+            type="text"
+            placeholder="Title ✏️"/>
+          <br />
+        </div>
       <div class="form-floating mb-3">
         <textarea
           name="description"
@@ -14,13 +22,14 @@
       </div>
 
       <div class="input-group mb-3">
+        <span class="input-group-text">📷</span>
         <input class="form-control" name="image" type="file" id="fileInput" accept="image/*" />
         <br />
       </div>
 
       <div class="mb-3 info-error">
         <div class="input-group">
-          <span class="input-group-text" id="basic-addon3">Your//t.me URL 🔗</span>
+          <span class="input-group-text" id="basic-addon3">Your//t.me Username 🔗</span>
           <input
             name="url"
             type="text"
@@ -33,8 +42,10 @@
           <span class="input-group-text">UZS 💵</span>
           <input
             name="uzs"
-            type="number"
+            type="text"
+            id="uzsInput"
             class="form-control"
+            min="0"
             aria-label="Amount (to the nearest dollar)"
           />
           <span class="input-group-text">So'm</span>

@@ -1,0 +1,43 @@
+/* Product Page CSS */
+
+.avatar p {
+    padding: 5px 8px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #6FFF21;
+}
+
+.card-box {
+    /* background-color:#cccccc; */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-in {
+    border-radius: 10px;
+    border: 1px solid #bdbdbd;
+    background-color: #ffffff;
+}
+
+.card-in img {
+    cursor: pointer;
+    padding: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-body {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-backdrop.show {
+    backdrop-filter: blur(15px); 
+    background-color: #00000066; 
+    opacity: 1;
+    transition: all .3s;
+  }

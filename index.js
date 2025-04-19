@@ -4,8 +4,12 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import flash from "connect-flash";
 import session from "express-session";
-import varMiddleware from "./middleware/var.js";
 import cookieParser from "cookie-parser";
+
+import varMiddleware from "./middleware/var.js";
+import userMiddleware from "./middleware/user.js";
+import hbsHelper from "./utils/index.js";
+
 // Routers
 import mainRoutes from "./routes/main.js";
 import registerRoutes from "./routes/register.js";
@@ -13,10 +17,7 @@ import registerRoutes from "./routes/register.js";
 dotenv.config();
 const app = express();
 
-const hbs = create({
-  defaultLayout: "main",
-  extname: "hbs",
-});
+const hbs = create({ defaultLayout: "main", extname: "hbs", helpers: hbsHelper});
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "./views");
@@ -28,6 +29,7 @@ app.use(session({secret: "Jokhn", resave: false, saveUninitialized: false}));
 app.use(flash());
 app.use(cookieParser());
 app.use(varMiddleware);
+app.use(userMiddleware);
 
 app.use(mainRoutes);
 app.use(registerRoutes);
