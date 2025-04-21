@@ -40,19 +40,21 @@
                     class="btn-group-sm"
                     role="group"
                     aria-label="Basic example">
-                    <a class="btn btn-dark btn-sm" href="{{this.url}}">Message</a>
-                    {{!-- {{#if @root.token}}
-                      {{#ifequal user._id @root.userId}}
+                    {{#if @root.token}}
+                      <a class="btn btn-dark btn-sm" href="{{this.url}}">Message</a>
+                      {{#ifequal this.user._id @root.userId}}
                         <button type="button" class="btn btn-dark">Edit</button>
                         <button
                           type="button"
                           class="btn btn-dark"
                         >Delete</button>
                       {{/ifequal}}
-                    {{/if}} --}}
+                      {{else}}
+                       <a class="btn btn-dark btn-sm" href="{{this.url}}">Message</a>
+                    {{/if}}
                   </div>
                 </div>
-                <small class="text-body-secondary">9 mins</small>
+                <small class="time">{{formatData cratedAt}}</small>
               </div>
             </div>
           </div>

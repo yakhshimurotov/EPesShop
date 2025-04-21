@@ -7,6 +7,15 @@
     background-color: #6FFF21;
 }
 
+.time {
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #ff216b;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 .card-box {
     /* background-color:#cccccc; */
     padding: 10px;

@@ -3,7 +3,6 @@ import User from "../models/User.js"
 
 export default async function(req, res, next) {
     if(!req.cookies.token){
-        // res.redirect("/login");
         next();
         return
     };
