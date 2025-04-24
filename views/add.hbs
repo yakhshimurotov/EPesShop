@@ -1,15 +1,21 @@
 <div class="container">
   <h1 class="salom">Add Product</h1>
   <div class="info-box">
-    <form id="myForm" action="/add-product" method="POST" enctype="multipart/form-data">
-     <div class="input-group mb-3">
-          <input
-            class="form-control"
-            name="title"
-            type="text"
-            placeholder="Title ✏️"/>
-          <br />
-        </div>
+    <form
+      id="myForm"
+      action="/add-product"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="input-group mb-3">
+        <input
+          class="form-control"
+          name="title"
+          type="text"
+          placeholder="Title ✏️"
+        />
+        <br />
+      </div>
       <div class="form-floating mb-3">
         <textarea
           name="description"
@@ -23,13 +29,20 @@
 
       <div class="input-group mb-3">
         <span class="input-group-text">📷</span>
-        <input class="form-control" name="image" type="file" id="fileInput" accept="image/*" />
+        <input
+          class="form-control"
+          name="image"
+          type="file"
+          id="fileInput"
+          accept="image/*"
+        />
         <br />
       </div>
 
       <div class="mb-3 info-error">
         <div class="input-group">
-          <span class="input-group-text" id="basic-addon3">Your//t.me Username 🔗</span>
+          <span class="input-group-text" id="basic-addon3">Your//t.me Username
+            🔗</span>
           <input
             name="url"
             type="text"
@@ -38,6 +51,7 @@
             aria-describedby="basic-addon3 basic-addon4"
           />
         </div>
+        <div class="d-flex justify-content-between align-items-center gap-2">
         <div class="input-group mt-3 input-sum">
           <span class="input-group-text">UZS 💵</span>
           <input
@@ -49,6 +63,20 @@
             aria-label="Amount (to the nearest dollar)"
           />
           <span class="input-group-text">So'm</span>
+        </div>
+
+        <div class="input-group mt-3 input-sum">
+          <span class="input-group-text">Scores ⭐</span>
+          <input
+            name="scores"
+            type="text"
+            id="uzsInput"
+            class="form-control"
+            min="0"
+            aria-label="Amount (to the nearest dollar)"
+          />
+          {{!-- <span class="input-group-text">⭐</span> --}}
+        </div>
         </div>
         <button type="submit" class="btn btn-dark mt-3">Add product</button>
         <button type="reset" class="btn btn-dark mt-3">Reset</button>

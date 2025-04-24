@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="mb-5">My Products</h1>
   {{#if myProduct.length}}
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 p-3 card-box">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4 p-3 card-box">
       {{#each myProduct}}
         <div class="col">
           <div class="card card-in">
@@ -21,7 +21,7 @@
                 Quisquam, voluptatibus.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <p class="m-0">{{this.uzs}} so'm 💵</p>
-                <small class="time">{{formatData cratedAt}}</small>
+                <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill time">{{formatData cratedAt}}</span>
               </div>
               <p>{{userId}}</p>
             </div>
