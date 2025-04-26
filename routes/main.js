@@ -12,16 +12,16 @@ import { Router } from "express";
  });
  
  
- router.get("/product", async (req, res) => {
+ router.get("/profile", async (req, res) => {
      const user = req.userId ? req.userId : null;
      const myProduct = await Product.find({user}).lean();
      if(!req.cookies.token) {
          res.redirect("/login");
      };
      
-     res.render("product", {
-         title: "Product",
-         isProduct: true,
+     res.render("profile", {
+         title: "Profile",
+         isProfile: true,
          myProduct: myProduct.reverse(),
      });
  });

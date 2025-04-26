@@ -26,13 +26,13 @@ form .info-error > .error {
 }
 
 .info-box .form-floating textarea:active {
-    border: 1px solid #6FFF21;
-    box-shadow: 0px 0px 0px 5px #d5ffbe;
+    border: 1px solid #0021B7;
+    box-shadow: 0px 0px 0px 5px #d4dbff;
 }  
 
 .info-box .form-floating textarea:focus {
-    border: 1px solid #6FFF21;
-    box-shadow: 0px 0px 0px 5px #d5ffbe;
+    border: 1px solid #0021B7;
+    box-shadow: 0px 0px 0px 5px #d4dbff;
 }
 
 .input-group input {
@@ -40,13 +40,13 @@ form .info-error > .error {
 }
 
 .input-group input:active {
-    border: 1px solid #6FFF21;
-    box-shadow: 0px 0px 0px 5px #d5ffbe;
+    border: 1px solid #0021B7;
+    box-shadow: 0px 0px 0px 5px #d4dbff;
 }
 
 .input-group input:focus {
-    border: 1px solid #6FFF21;
-    box-shadow: 0px 0px 0px 5px #d5ffbe;
+    border: 1px solid #0021B7;
+    box-shadow: 0px 0px 0px 5px #d4dbff;
 }
 
 /* .btn-detial {

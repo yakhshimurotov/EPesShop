@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mb-5">My Products</h1>
+  <h1 class="mb-5 title">My Profile</h1>
   {{#if myProduct.length}}
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4 p-3 card-box">
       {{#each myProduct}}
@@ -20,7 +20,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, voluptatibus.</p>
               <div class="d-flex justify-content-between align-items-center">
-                <p class="m-0">{{this.uzs}} so'm 💵</p>
+              <span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">{{this.uzs}} so'm 💵</span>
                 <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill time">{{formatData cratedAt}}</span>
               </div>
               <p>{{userId}}</p>

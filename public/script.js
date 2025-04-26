@@ -1,15 +1,26 @@
 
   const uzsInput = document.getElementById("uzsInput");
   const loader = document.getElementById('loader');
+  const input = document.getElementById("codeInput");
 
+  
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('loader').style.display = 'none';
     }, 1000); // 3 sekund kutadi
   });
+  
+  
+  input.addEventListener("input", function () {
+    // Faqat raqam kiritish
+    this.value = this.value.replace(/\D/g, "");
 
-
-
+    // Agar 4 tadan ko‘p bo‘lsa, faqat birinchi 4 tasini oladi
+    if (this.value.length > 4) {
+      this.value = this.value.slice(0, 4);
+    }
+  });
+  
   uzsInput.addEventListener("input", function (e) {
     let value = e.target.value;
 

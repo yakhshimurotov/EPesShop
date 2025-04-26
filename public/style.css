@@ -43,7 +43,7 @@ body {
 }
 
 .loader .loader-obj {
-    color: #6FFF21;
+    color: #fff;
 }
 /* Loading ------ styel */
 
@@ -51,8 +51,8 @@ body {
 .box-login {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 70vh;
+    justify-content: center;
+    height: 80vh;
 }
 
 .login {
@@ -83,8 +83,8 @@ body {
 }
 
 .login form input:focus {
-    border: 1px solid #6FFF21;
-    box-shadow: 0px 0px 0px 5px #d5ffbe;
+    border: 1px solid #0021B7;
+    box-shadow: 0px 0px 0px 5px #d4dbff;
 }
 /* Login ------ styel */
 
@@ -102,8 +102,8 @@ body {
 .box-signup {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 70vh;
+    justify-content: center;
+    height: 80vh;
 }
 
 .signup {
@@ -130,8 +130,8 @@ body {
 }
 
 .signup form input:focus {
-    border: 1px solid #6FFF21;
-    box-shadow: 0px 0px 0px 5px #d5ffbe;
+    border: 1px solid #0021B7;
+    box-shadow: 0px 0px 0px 5px #d4dbff;
 }
 
 .signup form h1 {
@@ -146,7 +146,7 @@ header {
     backdrop-filter: blur(20px);
     width: 80%;
     margin: 0 auto;
-    padding: 10px 20px 10px 20px;
+    padding: 5px 20px 5px 20px;
     border-radius: 0 0 15px 15px;
 }
 
@@ -173,28 +173,32 @@ header a > img:hover {
 }
 
 header ul .a-color {
-    /* color: #6FFF21; */
-    color: #222;
     margin-left: 10px;
     font-size: 14px;
 }
 
 header ul .a-active {
-    background-color: #222;
-    border-radius: 10px;
-    color: #fff;
+    color: #000;
+    font-weight: 600;
+}
+    
+.custom-toggler {
+    background-color: #0021B7;
+    padding: 4px 6px 4px 6px;
+    transition: all .5s;
 }
 
-header ul .a-color:hover {
-    background-color: #222;
-    border-radius: 10px;
-    color: #fff;
+.custom-toggler:focus {
+    box-shadow: 0px 0px 0px 5px #d4dbff;
 }
 
-header a {
-    color: #222;
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-header a:hover {
-    color: #222;
+.title {
+    text-align: center;
+    font-size: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
 }
