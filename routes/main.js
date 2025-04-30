@@ -2,7 +2,7 @@ import { Router } from "express";
  import Product from "../models/Product.js";
  import upload  from "../middleware/multer.js";
  import userMiddleware from "../middleware/user.js";
- import User from "../models/User.js"; 
+ import User from "../models/user.js"; 
  const router = Router();
  
  router.get("/", (req, res) => {

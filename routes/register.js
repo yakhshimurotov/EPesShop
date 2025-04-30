@@ -1,5 +1,5 @@
 import { Router } from "express";
- import User from "../models/User.js";
+ import User from "../models/user.js";
  import bcrypt from "bcrypt";
  import { generateJwtToken } from "../servies/servies.js";
  const router = Router();
