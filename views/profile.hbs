@@ -1,7 +1,19 @@
 <div class="container">
-  <h1 class="mb-5 title">My Profile</h1>
+  <h1 class="mb-3 title">My Profile</h1>
+  <div
+    class="avatar-box p-3 text-start d-flex justify-content-between align-items-center bg-light rounded-3 mb-2 w-50 mx-auto border border-1">
+    <p class="mb-0 text-dark">
+      {{firstName}}
+      {{lastName}}
+      |
+      {{email}}
+    </p>
+    <div class="fs-2">👤</div>
+  </div>
   {{#if myProduct.length}}
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4 p-3 card-box">
+    <div
+      class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4 p-3 card-box mb-3"
+    >
       {{#each myProduct}}
         <div class="col">
           <div class="card card-in">
@@ -16,14 +28,35 @@
 
             <div class="card-body">
               <h5 class="text-bold fw-bold">{{this.title}}</h5>
-              <p class="card-text">{{this.description}}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, voluptatibus.</p>
-              <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">{{this.uzs}} so'm 💵</span>
-                <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill time">{{formatData cratedAt}}</span>
+              <p class="card-text">{{this.description}}</p>
+              <div
+                class="d-flex justify-content-start align-items-center mb-3 gap-2"
+              >
+                <div>
+                  <a
+                    type="button"
+                    href="/edit-product/{{_id}}"
+                    class="btn btn-color rounded-3 btn-sm"
+                  >Edit</a>
+                </div>
+                <div>
+                  <form action="/delete-product/{{_id}}" class="delete-btn">
+                    <button
+                      type="submit"
+                      class="btn btn-dark btn-sm rounded-3"
+                    >Delete</button>
+                  </form>
+                </div>
               </div>
-              <p>{{userId}}</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <span
+                  class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-3"
+                >{{this.uzs}} so'm 💵</span>
+                <span
+                  class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-3 time"
+                >{{formatData cratedAt}}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -51,6 +84,17 @@
       {{/each}}
     </div>
   {{else}}
-    <p>No Product 👀</p>
+    <div
+      class="d-flex flex-column justify-content-center align-items-center gap-0 mt-5">
+      <dotlottie-player
+        src="https://lottie.host/cb9d8dda-9409-443f-9679-8a325005916f/1ZArLxtxd6.lottie"
+        background="transparent"
+        speed="2"
+        style="width: 200px; height: 200px"
+        loop
+        autoplay
+      ></dotlottie-player>
+      <a href="/add" class="btn btn-dark rounded-3 btn-sm">Add Product</a>
+    </div>
   {{/if}}
 </div>

@@ -1,8 +1,10 @@
 <div class="container">
-  <div class="box-login">
-    <div class="login">
+  <div
+    class="box-login flex-row justify-content-align align-items-center gap-5"
+  >
+    <div class="login 404-error">
       <form action="/login" method="post">
-       <h1 class="mb-4">Login</h1>
+        <h1 class="mb-4">Login</h1>
         <div class="mb-3">
           <input
             name="email"
@@ -23,9 +25,9 @@
           />
         </div>
         <button type="submit" class="btn btn-dark mt-3">Submit</button>
-         {{#if isLoginError}}
+        {{#if isLoginError}}
           <p class="error">{{isLoginError}} ⚠️</p>
-         {{/if}}  
+        {{/if}}
       </form>
     </div>
   </div>

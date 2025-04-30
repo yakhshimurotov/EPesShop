@@ -6,7 +6,47 @@
         border-radius: 0 !important;
     }
 
+    header ul a {
+        font-size: 13px !important;
+    }
+
     header .all-btn {
         scale: .9;
+    }
+
+    .info-box {
+        width: 100% !important;
+        padding: 10px 20px 10px 20px!important;
+        border-radius: 0 !important;
+        height: 100% !important;
+    }
+
+    .box-login {
+        padding: 25px;
+    }
+
+    .box-login .login > form input{
+        width: 200px;
+    }
+
+    .box-signup {
+        padding: 25px;
+    }
+
+    .box-signup .signup > form input{
+        width: 200px;
+    }
+
+    .avatar-box {
+        width: 90% !important;
+        gap: 2em;
+    }
+
+    .section_1 .img > img{
+        width: 330px !important;
+    }
+
+    .section_2 .title-info p {
+        padding: 10px;
     }
 }

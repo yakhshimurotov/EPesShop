@@ -27,31 +27,32 @@
               <h5 class="text-bold fw-bold">{{this.title}}</h5>
               <p class="card-text">{{this.description}}</p>
               <div class="d-flex justify-content-left align-items-center gap-3">
-                <p class="mb-3 badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">{{getFullNameCharacter user.firstName}}.{{getFullNameCharacter user.lastName}}</p>
-                <p class="mb-3 badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-pill score">⭐ {{this.scores}}</p>
-                <span class="mb-3 badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">{{this.uzs}} so'm 💵</span>
+                <p class="mb-3 badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-3">{{getFullNameCharacter user.firstName}}.{{getFullNameCharacter user.lastName}}</p>
+                <p class="mb-3 badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-3 score">⭐ {{this.scores}}</p>
+                <span class="mb-3 badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-3">{{this.uzs}} so'm 💵</span>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <div
-                    class="btn-group-sm"
+                    class="btn-group-sm d-flex justify-content-center align-items-center gap-2"
                     role="group"
                     aria-label="Basic example">
                     {{#if @root.token}}
-                      <a class="btn btn-dark btn-sm" href="{{this.url}}">Message</a>
+                      <a class="btn btn-color rounded-3 btn-sm" href="{{this.url}}">Message</a>
                       {{#ifequal this.user._id @root.userId}}
-                        <button type="button" class="btn btn-dark">Edit</button>
-                        <button
-                          type="button"
-                          class="btn btn-dark"
-                        >Delete</button>
+                        <a type="button" href="/edit-product/{{_id}}" class="btn btn-color rounded-3">Edit</a>
+                        <form action="/delete-product/{{_id}}" class="delete-btn">
+                         <button
+                          type="submit"
+                          class="btn btn-dark btn-sm rounded-3">Delete</button>
+                        </form>
                       {{/ifequal}}
                       {{else}}
-                       <a class="btn btn-dark btn-sm" href="{{this.url}}">Message</a>
+                       <a class="btn btn-color btn-sm rounded-3" href="{{this.url}}">Message</a>
                     {{/if}}
                   </div>
                 </div>
-                <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill time">{{formatData cratedAt}}</span>
+                <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-3 time">{{formatData cratedAt}}</span>
               </div>
             </div>
           </div>
@@ -82,30 +83,21 @@
   {{else}}
     <p>No Product 👀</p>
   {{/if}}
- <div class="d-flex justify-content-center mt-4">
+ <div class="d-flex justify-content-center mt-4 align-items-center mb-3">
   <nav aria-label="Page navigation">
-    <ul class="pagination pagination-dark salom">
+    <ul class="pagination pagination-dark d-flex justify-content-center align-items-center gap-2">
       {{#if (gt currentPage 1)}}
         <li class="page-item">
-          <a class="page-link bg-dark text-white border-secondary" href="/accounts?page={{subtract currentPage 1}}">
-            « Previous
+          <a class="btn btn-light page-link text-dark rounded-3" href="/accounts?page={{subtract currentPage 1}}">
+           ⬅️ Previous
           </a>
         </li>
       {{/if}}
 
-      {{#each (range 1 totalPages)}}
-        <li class="page-item {{#ifEquals this ../currentPage}}{{/ifEquals}}">
-          <a class="page-link {{#ifEquals this ../currentPage}}bg-light text-dark{{else}}bg-dark text-white border-secondary{{/ifEquals}}" 
-             href="/accounts?page={{this}}">
-            {{this}}
-          </a>
-        </li>
-      {{/each}}
-
       {{#if (lt currentPage totalPages)}}
         <li class="page-item">
-          <a class="page-link bg-dark text-white border-secondary" href="/accounts?page={{add currentPage 1}}">
-            Next »
+          <a class="btn btn-light page-link text-dark rounded-3" href="/accounts?page={{add currentPage 1}}">
+            Next Page ➡️
           </a>
         </li>
       {{/if}}
