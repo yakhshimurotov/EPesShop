@@ -15,23 +15,29 @@ import { Router } from "express";
  // Profile sahifasi
  router.get("/profile", async (req, res) => {
     const userId = req.userId ? req.userId.toString() : null;
+    
     // Productlarni olish
     const myProduct = await Product.find({ user: userId }).populate("user").lean();
+    
     // User ma'lumotini olish to‘g‘ridan-to‘g‘ri
     const userData = await User.findById(userId).lean();
-     if(!req.cookies.token) {
-         res.redirect("/login");
-     };
-     
-     res.render("profile", {
-         title: "Profile",
-         isProfile: true,
-         firstName: userData?.firstName || "",
-         lastName: userData?.lastName || "",
-         email: userData?.email || "",
-         myProduct: myProduct.reverse(),
-     });
- });
+
+    // Agar token yo'q bo'lsa, login sahifasiga yo'naltirish
+    if (!req.cookies.token) {
+        return res.redirect("/login"); // return qo'shish, keyin kodni to'xtatish
+    }
+
+    // Token bor bo'lsa, profile sahifasini ko'rsatish
+    res.render("profile", {
+        title: "Profile",
+        isProfile: true,
+        firstName: userData?.firstName || "",
+        lastName: userData?.lastName || "",
+        email: userData?.email || "",
+        myProduct: myProduct.reverse(),
+    });
+});
+
  // Profile sahifasi
  
  router.get("/add", (req, res) => {
