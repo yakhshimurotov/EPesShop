@@ -49,20 +49,19 @@ app.use(userMiddleware);
 app.use(mainRoutes);
 app.use(registerRoutes);
 
-const appStart = () => {
+const appStart = async () => {
   try {
-    mongoose
-      .connect(process.env.MONGO_URL)
-      .then(() => console.log("MongoDB is connected..."))
-      .catch(() => console.log("MongoDB is Error"));
+    await mongoose.connect(process.env.MONGO_URL);
+    console.log("MongoDB is connected...");
 
     const PORT = process.env.PORT || 3005;
     app.listen(PORT, () => {
       console.log(`Server is running ${PORT}`);
     });
   } catch (error) {
-    console.log(error);
+    console.log("MongoDB connection failed:", error);
   }
 };
+
 
 appStart();
